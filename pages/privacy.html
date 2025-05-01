@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Fishlophy | Saksham Sharma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Internal CSS - Copy this entire style section -->
+    <style>
+        :root {
+            --primary-color: #5F9EA0;  /* Beautiful teal */
+            --accent-color: #E6E6FA;   /* Lavender */
+            --highlight-color: #00CED1; /* Cyan */
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --secondary-bg: #2a2a2a;
+            --transition: all 0.3s ease;
+        }
+
+        /* Light theme variables */
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --secondary-bg: #f5f5f5;
+        }
+
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            cursor: default;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.3rem 2rem;
+            background-color: var(--secondary-bg);
+            border-bottom: 1px solid var(--highlight-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: auto;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.3rem;
+            margin-left: 1rem;
+        }
+
+        .nav-brand a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 2px;
+            font-size: 0.95rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--highlight-color);
+            transition: width 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+            box-shadow: 0 0 8px var(--highlight-color);
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            cursor: pointer;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        /* Content Styles */
+        .content {
+            min-height: calc(100vh - 150px);
+            padding: 2.5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Policy Container */
+        .policy-container {
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .policy-header {
+            padding: 2rem;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .policy-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .policy-header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .policy-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--highlight-color);
+        }
+
+        .policy-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        .policy-body {
+            padding: 2rem;
+            line-height: 1.8;
+        }
+
+        .policy-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .policy-body h2 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .policy-body h3 {
+            color: var(--highlight-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .policy-body ul, .policy-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .policy-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: var(--secondary-bg);
+            margin-top: 0.5rem;
+        }
+
+        .footer-content {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-brand {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: center;
+                background-color: var(--secondary-bg);
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, padding 0.4s ease;
+                z-index: 10;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+            }
+            
+            .nav-links.active {
+                max-height: 300px;
+                padding: 1rem 0;
+                opacity: 1;
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(95, 158, 160, 0.1);
+            }
+            
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-link::after {
+                bottom: 5px;
+            }
+
+            .policy-title {
+                font-size: 2rem;
+            }
+            
+            .policy-meta {
+                gap: 1rem;
+            }
+            
+            .policy-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">Saksham Sharma <span id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></span></a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="pages/skills.html" class="nav-link">Skills</a>
+            <a href="pages/experience.html" class="nav-link">Experience</a>
+            <a href="pages/projects.html" class="nav-link">Projects</a>
+            <a href="pages/writings.html" class="nav-link">Writings</a>
+            <a href="pages/contact.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <article class="policy-container">
+            <!-- Policy Header -->
+            <div class="policy-header" style="background-image: url('images/privacy.jpg');">
+                <div class="policy-header-content">
+                    <h1 class="policy-title">Privacy Policy</h1>
+                    <div class="policy-meta">
+                        <span><i class="far fa-calendar-alt"></i> Effective: May 1, 2025</span>
+                        <span><i class="fas fa-shield-alt"></i> Fishlophy</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Policy Body -->
+            <div class="policy-body">
+                <p>Welcome to Fishlophy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our applications, websites, and services (collectively, the "Services"). This policy applies to Fishlophy and all other products developed by Saksham Sharma ("we," "us," or "our").</p>
+                
+                <h2>1. Introduction</h2>
+                <p>Fishlophy is an educational platform where we share philosophical insights about life, principles, and key understandings. Our aim is to enlighten and inspire our users through thoughtful content.</p>
+                <p>Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access our Services.</p>
+                
+                <h2>2. Information We Collect</h2>
+                <p>We collect minimal personal information and strive to respect your privacy. Here's what we may collect:</p>
+                
+                <h3>2.1 Information You Provide</h3>
+                <p>When you submit information through our contact forms, we collect:</p>
+                <ul>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Message content</li>
+                </ul>
+                
+                <h3>2.2 Automatically Collected Information</h3>
+                <p>We use Cloudflare Analytics to collect basic usage information, including:</p>
+                <ul>
+                    <li>Visitor count</li>
+                    <li>Country of origin</li>
+                    <li>Access time and date</li>
+                    <li>Basic usage metrics</li>
+                </ul>
+                
+                <h3>2.3 Cookies and Tracking</h3>
+                <p>Our Services do not use cookies or other tracking technologies beyond what is used by Cloudflare Analytics for basic site performance and analytics.</p>
+                
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the information we collect for the following purposes:</p>
+                <ul>
+                    <li>To respond to your inquiries, comments, or questions</li>
+                    <li>To provide feedback and support</li>
+                    <li>To analyze and improve our Services</li>
+                    <li>To maintain and optimize the performance of our Services</li>
+                </ul>
+                
+                <h2>4. Sharing Your Information</h2>
+                <p>We do not sell, trade, or otherwise transfer your personal information to third parties. However, we may share information with:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> We may share information with third-party service providers that help us operate our Services (e.g., Cloudflare for analytics, Niotron.com for application development).</li>
+                    <li><strong>Legal Requirements:</strong> We may disclose information if required to do so by law or in response to valid requests by public authorities.</li>
+                </ul>
+                
+                <h2>5. Data Retention</h2>
+                <p>We store contact form submissions indefinitely unless you request their deletion. Analytics data is retained according to Cloudflare's data retention policies.</p>
+                
+                <h2>6. Third-Party Services</h2>
+                <p>Our Services use the following third-party services:</p>
+                <ul>
+                    <li><strong>Cloudflare Analytics:</strong> For basic website analytics. You can review Cloudflare's privacy policy at <a href="https://www.cloudflare.com/privacypolicy/" style="color: var(--highlight-color);">https://www.cloudflare.com/privacypolicy/</a></li>
+                    <li><strong>Niotron:</strong> Used for application development. You can review Niotron's privacy policy on their website.</li>
+                </ul>
+                <p>We may incorporate advertisements in our Services in the future. If implemented, we will update this Privacy Policy accordingly.</p>
+                
+                <h2>7. User Rights</h2>
+                <p>You have certain rights regarding your personal information:</p>
+                <ul>
+                    <li><strong>Access:</strong> You can request access to the personal information we hold about you.</li>
+                    <li><strong>Correction:</strong> You can request that we correct inaccurate information.</li>
+                    <li><strong>Deletion:</strong> You can request that we delete your personal information.</li>
+                    <li><strong>Objection:</strong> You can object to the processing of your personal information.</li>
+                </ul>
+                <p>To exercise these rights, please contact us at contacttheidealdev52@gmail.com.</p>
+                
+                <h2>8. Children's Privacy</h2>
+                <p>Our Services are not intended for users under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us, and we will delete such information.</p>
+                
+                <h2>9. International Data Transfers</h2>
+                <p>Your information may be transferred to and processed in countries other than your country of residence. These countries may have different data protection laws. By using our Services, you consent to such transfers.</p>
+                
+                <h2>10. GDPR and CCPA Compliance</h2>
+                <p>For users in the European Economic Area (EEA), we comply with the General Data Protection Regulation (GDPR). For California residents, we comply with the California Consumer Privacy Act (CCPA). These regulations provide specific rights regarding personal information, all of which are covered in the "User Rights" section above.</p>
+                
+                <h2>11. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+                
+                <h2>12. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <ul>
+                    <li>Email: contacttheidealdev52@gmail.com or contactsaksham52@gmail.com</li>
+                    <li>Name: Saksham Sharma</li>
+                    <li>Location: Lalitpur, Nepal</li>
+                </ul>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Elfsight Subscription Form | Untitled Subscription Form -->
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-a3279f79-5e02-425b-a8f4-ff12ecfbb964" data-elfsight-app-lazy></div>
+            <p>&copy; 2025 Saksham Sharma | All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const themeToggle = document.getElementById('theme-toggle');
+            const iconElement = themeToggle.querySelector('i');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Check if user previously set a theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.setAttribute('data-theme', savedTheme);
+                updateIcon(savedTheme === 'light', iconElement);
+            }
+            
+            // Toggle theme when clicked
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? '' : 'light';
+                
+                document.body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                updateIcon(newTheme === 'light', iconElement);
+            });
+            
+            // Function to update icon based on theme
+            function updateIcon(isLight, icon) {
+                if (isLight) {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                } else {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            }
+            
+            // Mobile menu toggle functionality
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = navLinks.contains(event.target);
+                    const isClickOnToggle = mobileMenuToggle.contains(event.target);
+                    
+                    if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                navLinks.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
