@@ -481,11 +481,13 @@ body {
     text-align: justify;
     color: var(--text-color);
     opacity: 0.9;
-    line-height: 1.8;
-    padding: 0 1rem;
+    line-height: 1.6;
+    padding: 0 20px;
     position: relative;
-    max-width: 800px;
+    max-width: 700px;
     margin-left: auto;
+    hyphens: auto;
+    word-spacing: normal;
     margin-right: auto;
 }
 
