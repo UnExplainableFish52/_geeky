@@ -44,7 +44,20 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.classList.add(bars ? 'fa-bars' : 'fa-times');
     }
 
-    // Toggle menu function
+    // Calculate scrollbar width to prevent layout shift
+    function getScrollbarWidth() {
+        const scrollDiv = document.createElement("div");
+        scrollDiv.style.visibility = "hidden";
+        scrollDiv.style.overflow = "scroll";
+        scrollDiv.style.width = "50px";
+        scrollDiv.style.height = "50px";
+        document.body.appendChild(scrollDiv);
+        const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+        document.body.removeChild(scrollDiv);
+        return scrollbarWidth;
+    }
+
+    // Toggle menu function (with scrollbar compensation)
     function toggleMenu(forceClose = false) {
         const willBeActive = forceClose ? false : !navLinks.classList.contains('active');
         if (willBeActive) {
@@ -52,12 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.add('active');
             menuOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = getScrollbarWidth() + 'px';
             setHamburgerIcon(false); // show times
         } else {
             mobileMenuToggle.classList.remove('active');
             navLinks.classList.remove('active');
             menuOverlay.classList.remove('active');
             document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
             setHamburgerIcon(true); // show bars
         }
     }
